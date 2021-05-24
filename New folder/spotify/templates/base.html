@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Landing - Forty by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2" style="background-position: center 0px; background-image: url('static/images/spot.jpg');">
+						<div class="inner">
+							<span class="image">
+								<img src="{{ url_for('static', filename='images/spot.jpg') }}" />
+							</span>
+							<header class="major">
+								<h1>Spotify Song Suggester</h1>
+							</header>
+							<div class="content">
+								<p>Using a dataset that has over 1.2 million songs, this app is able to use the given track name and provide a result of 5 song that are a must add to your playlist.</p>
+							    <ul class="actions">
+                </p>
+              </div>
+              <form class='myDiv' action="/user_submitted" method="post">
+                <input type="text" name="track_name" placeholder="Enter a song name">
+                <input type="submit" value="Submit">
+              </form>
+              <div>
+                {% for track in tracks %}
+                <span class="stack">
+                  {{ track }}
+                </span>
+                {% endfor %}
+							</div>
+            <footer>
+              <p style="text-align:center;">
+                <a href="{{ url_for('about') }}" class="button">ABOUT</a></li>
+              </footer>
+					</section>
+
+
+
+
+		<!-- Scripts -->
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
